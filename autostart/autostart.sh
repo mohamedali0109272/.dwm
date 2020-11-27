@@ -2,8 +2,7 @@
 
 
 #commands
--action
-lxsession &
+#lxsession &
 
 feh --bg-fill ~/.dwm/wall.jpg
 
@@ -80,7 +79,7 @@ PUBLIC(){
 	printf " %s " "$PUBLIC |"
 }
 
-while a=1;do sleep 0.5;xsetroot -name "$(clock)$(cpu)$(memory)$(TEMP)$(battery)$(ping -c1 1.1.1.1 | awk -F= 'NR==2{printf $4 }')";done
+while a=1;do sleep 0.5;xsetroot -name "$(clock)$(cpu)$(memory)$(TEMP)$(battery)";done
 
 #echo "$(clock)$(cpu)$(memory)$(swap)$(TEMP)$(battery)$(ping -c1 1.1.1.1 | awk -F= 'NR==2{printf $4 }')"
 
