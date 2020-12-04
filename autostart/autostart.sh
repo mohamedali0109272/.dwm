@@ -2,11 +2,13 @@
 
 
 #commands
-#lxsession &
+lxsession &
 
 feh --bg-fill ~/.dwm/wall.jpg
 
 nm-applet --no-agent  &
+
+albert &
 
 picom -b --config ~/.dwm/autostart/picom.conf
 
@@ -17,7 +19,7 @@ function_name () {
 
 clock (){
 	dte="$(date +"%d %l:%M%p"| sed 's/  / /g')"
-	printf " %s" "$dte "
+	printf " %s" "$dte                                                                 "
 }
 
 
