@@ -3,14 +3,14 @@
 
 #commands
 lxsession &
-
-feh --bg-fill ~/.dwm/wall.jpg
-
+feh --bg-fill ~/.dwm/wall.png
 nm-applet --no-agent  &
-
 albert &
+picom -b --config ~/picom.sample.conf
+#picom -b --config ~/.dwm/autostart/picom.conf
+volumeicon &
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
 
-picom -b --config ~/.dwm/autostart/picom.conf
 
 function_name () {
   commands

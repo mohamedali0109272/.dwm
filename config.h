@@ -1,11 +1,11 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 0;        /* gaps between windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
-static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const unsigned int systrayspacing = 1;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -34,15 +34,16 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class                            instance    title       tags mask     isfloating   monitor */
-	{ "Brave-browser",                  NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "Google-chrome",                  NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Subl3",                          NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "Firefox",                        NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "vlc",                            NULL,       NULL,       1 << 5,       0,           -1 },
 	{ "Thunar",                         NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "spotify",                        NULL,       NULL,       1 << 6,       0,           -1 },
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 
@@ -74,7 +75,7 @@ static const char *rofi[]  = { "rofi", "-show", "drun", "-show-icons", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *thunar[]  = { "thunar", NULL };
 static const char *xkill[]  = { "xkill", NULL };
-static const char *chrome[]  = {"brave-browser", NULL };
+static const char *chrome[]  = {"google-chrome-stable", NULL };
 static const char *us[]  = {"setxkbmap", "us", NULL };
 static const char *ar[]  = {"setxkbmap", "ar", NULL };
 
