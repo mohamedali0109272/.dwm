@@ -39,7 +39,7 @@ static const Rule rules[] = {
 	{ "Firefox",                        NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "vlc",                            NULL,       NULL,       1 << 5,       0,           -1 },
 	{ "Thunar",                         NULL,       NULL,       1 << 3,       0,           -1 },
-	{ "spotify",                        NULL,       NULL,       1 << 6,       0,           -1 },
+	{ "Rhythmbox",                        NULL,       NULL,       1 << 6,       0,           -1 },
 };
 
 /* layout(s) */
