@@ -6,7 +6,7 @@ lxsession &
 feh --bg-fill ~/.dwm/wall.png
 nm-applet --no-agent  &
 albert &
-picom -b --config ~/picom.sample.conf
+picom -b --config ~/.dwm/autostart/picom.sample.conf
 #picom -b --config ~/.dwm/autostart/picom.conf
 volumeicon &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
