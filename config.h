@@ -1,5 +1,5 @@
 /* See LICENSE file for copyright and license details. */
-
+#include <X11/XF86keysym.h>
 /* appearance */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int gappx     = 10;        /* gaps between windows */
@@ -39,7 +39,7 @@ static const Rule rules[] = {
 	{ "Firefox",                        NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "vlc",                            NULL,       NULL,       1 << 5,       0,           -1 },
 	{ "Thunar",                         NULL,       NULL,       1 << 3,       0,           -1 },
-	{ "Rhythmbox",                        NULL,       NULL,       1 << 6,       0,           -1 },
+	{ "Rhythmbox",                      NULL,       NULL,       1 << 6,       0,           -1 },
 };
 
 /* layout(s) */
@@ -72,12 +72,17 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *rofi[]  = { "rofi", "-show", "drun", "-show-icons", NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *picom[]  = { "fish", "/home/memo/.dwm/autostart/picom.sh", NULL };
+static const char *termcmd[]  = { "termite", NULL };
 static const char *thunar[]  = { "thunar", NULL };
 static const char *xkill[]  = { "xkill", NULL };
 static const char *chrome[]  = {"google-chrome-stable", NULL };
 static const char *us[]  = {"setxkbmap", "us", NULL };
 static const char *ar[]  = {"setxkbmap", "ar", NULL };
+static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
+static const char *music[] = { "rhythmbox",  NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -86,7 +91,12 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = thunar } },
 	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = xkill } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = rofi } },
+	{ MODKEY,                       XK_c,      spawn,          {.v = picom } },
 	{ MODKEY,                       XK_g,      spawn,          {.v = chrome } },
+	{ MODKEY,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
+	{ MODKEY,                       XF86XK_AudioMute, spawn, {.v = mutevol } },
+	{ MODKEY,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+	{ MODKEY,                       XF86XK_AudioPlay, spawn,   {.v = music } },
 	{ MODKEY|ShiftMask,             XK_1,      spawn,          {.v = us } },
 	{ MODKEY,                       XK_u,      spawn,          {.v = ar } },
 	{ MODKEY,                       XK_a,      togglebar,      {0} },
@@ -113,6 +123,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_Left,   viewtoleft,     {0} },
+	{ MODKEY,                       XK_Right,  viewtoright,    {0} },
+	{ MODKEY|ShiftMask,             XK_Left,   tagtoleft,      {0} },
+	{ MODKEY|ShiftMask,             XK_Right,  tagtoright,     {0} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

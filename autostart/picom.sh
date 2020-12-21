@@ -1,0 +1,1 @@
+ps -ef |grep -v grep | grep picom.sample.conf > /dev/null  && kill picom;picom -b --config ~/.dwm/autostart/picom.t.conf ||  kill picom && picom -b --config ~/.dwm/autostart/picom.sample.conf 

@@ -2,14 +2,18 @@
 
 
 #commands
-lxsession &
+#lxsession &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)
 feh --bg-fill ~/.dwm/wall.png
 nm-applet --no-agent  &
 albert &
+slstatus &
 picom -b --config ~/.dwm/autostart/picom.sample.conf
 #picom -b --config ~/.dwm/autostart/picom.conf
 volumeicon &
+blueman-applet &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
+
 
 
 function_name () {
@@ -81,7 +85,7 @@ PUBLIC(){
 	printf " %s " "$PUBLIC |"
 }
 
-while a=1;do sleep 0.5;xsetroot -name "$(clock)$(cpu)$(memory)$(TEMP)$(battery)";done
+#while a=1;do sleep 0.5;xsetroot -name "$(clock)$(cpu)$(memory)$(TEMP)$(battery)";done
 
 #echo "$(clock)$(cpu)$(memory)$(swap)$(TEMP)$(battery)$(ping -c1 1.1.1.1 | awk -F= 'NR==2{printf $4 }')"
 
