@@ -38,6 +38,12 @@ st
 cd st 
 sudo make clean install
 
+slatatus
+-------
+cd ..
+cd slatatus
+sudo  make clean install
+
 
 yay
 ------
