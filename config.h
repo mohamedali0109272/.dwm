@@ -13,7 +13,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const int user_bh            = 30;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const char *fonts[]          = {"FontAwesome:size=15"};
-static const char dmenufont[]       = "monospace:size=17";
+static const char dmenufont[]       = "FontAwesome:size=17";
 static const char col_gray1[]       = "#000000";/*"#222222";*/
 static const char col_gray2[]       = "#000000";
 static const char col_gray3[]       = "#bbbbbb";
@@ -71,7 +71,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run","-c", "-l","20","-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *rofi[]  = { "rofi", "-show", "drun", "-show-icons", NULL };
 static const char *picom[]  = { "fish", "/home/memo/.dwm/autostart/picom.sh", NULL };
 static const char *termcmd[]  = { "st","-e", NULL };
