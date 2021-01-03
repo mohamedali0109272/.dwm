@@ -37,7 +37,7 @@ sudo make clean install
 #st
 #------
 
-cd st ;sudo make clean install
+cd stt ;sudo make clean install
 
 #slstatus
 #-------
