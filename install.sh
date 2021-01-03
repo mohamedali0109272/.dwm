@@ -38,10 +38,10 @@ st
 cd st 
 sudo make clean install
 
-slatatus
+slstatus
 -------
 cd ..
-cd slatatus
+cd slstatus
 sudo  make clean install
 
 
