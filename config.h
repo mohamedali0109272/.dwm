@@ -25,8 +25,8 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
-/* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+/* tagging */
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -34,12 +34,13 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class                            instance    title       tags mask     isfloating   monitor */
-	{ "Google-chrome",                  NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "Chromium",                       NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Subl3",                          NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "Firefox",                        NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "vlc",                            NULL,       NULL,       1 << 5,       0,           -1 },
 	{ "Thunar",                         NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Rhythmbox",                      NULL,       NULL,       1 << 6,       0,           -1 },
+	{ "mpv",                            NULL,       NULL,       1 << 5,       0,           -1 },
 };
 
 /* layout(s) */
@@ -73,10 +74,10 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *rofi[]  = { "rofi", "-show", "drun", "-show-icons", NULL };
 static const char *picom[]  = { "fish", "/home/memo/.dwm/autostart/picom.sh", NULL };
-static const char *termcmd[]  = { "termite", NULL };
+static const char *termcmd[]  = { "st","-e", NULL };
 static const char *thunar[]  = { "thunar", NULL };
 static const char *xkill[]  = { "xkill", NULL };
-static const char *chrome[]  = {"google-chrome-stable", NULL };
+static const char *chrome[]  = {"Chromium", NULL };
 static const char *us[]  = {"setxkbmap", "us", NULL };
 static const char *ar[]  = {"setxkbmap", "ar", NULL };
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
