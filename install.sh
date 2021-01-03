@@ -2,8 +2,8 @@
 
 
 
-pacman
--------
+#pacman
+#-------
 
 if test -f "/bin/pacman"; then
 	sudo pacman -S   \
@@ -13,12 +13,13 @@ if test -f "/bin/pacman"; then
 		albert \
 		awesome-terminal-fonts \
 		dmenu \
-		network-manager-applet
+		network-manager-applet \
+        gnome-keyring
 fi
 
 
-apt 
-------
+#apt 
+#------
 if test -f "/bin/apt"; then
 	sudo apt install \
 	dmenu \
@@ -27,33 +28,30 @@ fi
 
 
 
-dwm
-------
+#dwm
+#------
 
 sudo make clean install
 
 
-st
-------
+#st
+#------
 
-cd st 
-sudo make clean install
+cd st ;sudo make clean install
 
-slstatus
--------
-cd ..
-cd slstatus
-sudo  make clean install
+#slstatus
+#-------
+cd ../slstatus;sudo  make clean install
 
 
-yay
-------
+#yay
+#------
 if test -f "/bin/yay"; then
 	yay -S \
 		picom-git \
 		twemoji-color-font
 else; then
-	cd /opt   echo $USER
+	cd /opt
 	sudo git clone https://aur.archlinux.org/yay-git.git
 	sudo chown -R $USER:$USER ./yay-git
 	cd yay-git
