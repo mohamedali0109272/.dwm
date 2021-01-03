@@ -12,7 +12,8 @@ if test -f "/bin/pacman"; then
 		feh \
 		albert \
 		awesome-terminal-fonts \
-		dmenu
+		dmenu \
+		network-manager-applet
 fi
 
 
