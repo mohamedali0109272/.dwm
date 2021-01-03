@@ -15,13 +15,6 @@ if test -f "/bin/pacman"; then
 		dmenu
 fi
 
-yay
-------
-if test -f "/bin/yay"; then
-	yay -S \
-		picom-git \
-		twemoji-color-font
-fi
 
 apt 
 ------
@@ -44,3 +37,21 @@ st
 
 cd st 
 sudo make clean install
+
+
+yay
+------
+if test -f "/bin/yay"; then
+	yay -S \
+		picom-git \
+		twemoji-color-font
+else; then
+	cd /opt   echo $USER
+	sudo git clone https://aur.archlinux.org/yay-git.git
+	sudo chown -R $USER:$USER ./yay-git
+	cd yay-git
+	makepkg -si
+	yay -S \
+	picom-git \
+	twemoji-color-font
+fi
