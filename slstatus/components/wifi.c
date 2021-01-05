@@ -64,7 +64,7 @@
 		       "%*d\t\t%*d\t\t %*d\t  %*d\t\t %*d", &cur);
 
 		/* 70 is the max of /proc/net/wireless */
-		return bprintf(" %2d%%", (int)((float)cur / 70 * 100));
+		return bprintf(" %2d%% -", (int)((float)cur / 70 * 100));
 	}
 
 	const char *

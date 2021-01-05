@@ -87,7 +87,7 @@ static const char *music[] = { "rhythmbox",  NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = thunar } },
 	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = xkill } },
