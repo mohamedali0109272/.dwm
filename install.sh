@@ -14,6 +14,7 @@ if test -f "/bin/pacman"; then
 		awesome-terminal-fonts \
 		dmenu \
 		network-manager-applet \
+		pkg-config \
         gnome-keyring
 fi
 
@@ -46,11 +47,7 @@ cd ../slstatus;sudo  make clean install
 
 #yay
 #------
-if test -f "/bin/yay"; then
-	yay -S \
-		picom-git \
-		twemoji-color-font
-else; then
+if ! test -f "/bin/yay"; then
 	cd /opt
 	sudo git clone https://aur.archlinux.org/yay-git.git
 	sudo chown -R $USER:$USER ./yay-git
@@ -59,4 +56,9 @@ else; then
 	yay -S \
 	picom-git \
 	twemoji-color-font
+else
+	yay -S \
+		picom-git \
+		twemoji-color-font
+
 fi

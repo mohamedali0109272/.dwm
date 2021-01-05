@@ -4,7 +4,7 @@
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "n/a";
+static const char unknown_str[] = "";
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -67,15 +67,15 @@ static const struct arg args[] = {
 	/* function              format                                             argument */
 	/*{ datetime,             "%s",                                              "%T" }, */
 	{ run_command,            "%s",                              "date +'%d %l:%M%p'" },
-	{ separator,              "%s",                       "                       | " },
-	{ wifi_perc,      "%3s%% - ",                                           "wlan0" },
+	{ separator,              "%s",          "                                    | " },
+	{ wifi_perc,      "%s - ",                                           "wlan0" },
 	{ netspeed_rx,            "%s",                                           "wlan0" },
-	{ separator,              "%s",                                          "  | 💻" },
+	{ separator,              "%s",                                          "  | " },
 	{ cpu_perc,               "%s",                                              NULL },
-	{ separator,              "%s",                                         "%  | " },
+	{ separator,              "%s",                                         "%  | " },
 	{ ram_used,               "%s",                                              NULL },
-	{ run_command,          " |%s",    "ap=$(cat /sys/class/power_supply/AC/online);if [ \"$ap\" -eq \"1\" ]; then echo \"\"; fi" },
-	{ separator,              "%s",                                             " " },
+	{ run_command,          " |%s",    "ap=$(cat /sys/class/power_supply/AC/online);if [ \"$ap\" -eq \"1\" ]; then echo \"\";else echo ; fi" },
+//	{ separator,              "%s",                                             " " },
 	{ battery_perc,           "%s",                                            "BAT0" },
 	{ separator,              "%s",                                            "% | " },
 	{ run_command,     "%4s| ",    "amixer sget Master | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
