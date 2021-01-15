@@ -10,7 +10,7 @@ nm-applet &
 slstatus &
 picom -b --config ~/.dwm/autostart/picom.sample.conf
 #picom -b --config ~/.dwm/autostart/picom.conf
-#volumeicon &
+volumeicon &
 blueman-applet &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
@@ -23,7 +23,7 @@ function_name () {
 
 clock (){
 	dte="$(date +"%d %l:%M%p"| sed 's/  / /g')"
-	printf " %s" "$dte                                                                 "
+	printf " %s" "$dte                                                                "
 }
 
 
