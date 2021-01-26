@@ -47,18 +47,18 @@ cd ../slstatus;sudo  make clean install
 
 #yay
 #------
-if ! test -f "/bin/yay"; then
-	cd /opt
-	sudo git clone https://aur.archlinux.org/yay-git.git
-	sudo chown -R $USER:$USER ./yay-git
-	cd yay-git
-	makepkg -si
-	yay -S \
-	picom-git \
-	twemoji-color-font
-else
-	yay -S \
-		picom-git \
-		twemoji-color-font
-
-fi
+#if ! test -f "/bin/yay"; then
+#	cd /opt
+#	sudo git clone https://aur.archlinux.org/yay-git.git
+#	sudo chown -R $USER:$USER ./yay-git
+#	cd yay-git
+#	makepkg -si
+#	yay -S \
+#	picom-git \
+#	twemoji-color-font
+#else
+#	yay -S \
+#		picom-git \
+#		twemoji-color-font
+#
+#fi

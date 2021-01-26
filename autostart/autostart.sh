@@ -11,7 +11,7 @@ slstatus &
 picom -b --config ~/.dwm/autostart/picom.sample.conf
 #picom -b --config ~/.dwm/autostart/picom.conf
 volumeicon &
-blueman-applet &
+#blueman-applet &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 
