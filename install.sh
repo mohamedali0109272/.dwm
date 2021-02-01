@@ -15,7 +15,7 @@ if test -f "/bin/pacman"; then
 		dmenu \
 		network-manager-applet \
 		pkg-config \
-        gnome-keyring
+        	gnome-keyring
 fi
 
 
@@ -23,7 +23,13 @@ fi
 #------
 if test -f "/bin/apt"; then
 	sudo apt install \
-	dmenu \
+	build-essential \
+	libx11-dev \
+	libxft-dev \
+	libxinerama-dev\
+	gcc \
+	make \
+	dmenu 
 
 fi
 
