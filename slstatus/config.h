@@ -65,12 +65,10 @@ static const char unknown_str[] = "";
  */
 static const struct arg args[] = {
 	/* function              format                                             argument */
-	/*{ datetime,             "%s",                                              "%T" }, */
-//	{ sparator,             "%s",          "                                    | " },
-	{ wifi_perc,              "%s",                                           "wlan0" },
-	{ netspeed_rx,         " %s |",                                           "wlan0" },
+	{ wifi_perc,              "%s",                                           "wls1" },
+	{ netspeed_rx,         " %s |",                                           "wls1" },
 	{ cpu_perc,            " %s% |",                                              NULL },
-  { temp,             " %s |",           "/sys/class/thermal/thermal_zone2/temp" },	
+  	{ temp,             " %s |",           "/sys/class/thermal/thermal_zone2/temp" },	
 	{ ram_used,             " %s|",                                              NULL },
 	{ run_command,          " %s",    "ap=$(cat /sys/class/power_supply/AC/online);if [ \"$ap\" -eq \"1\" ]; then echo \"\";else echo ; fi" },
 //	{ separator,              "%s",                                             " " },

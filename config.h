@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 #include <X11/XF86keysym.h>
 /* appearance */
-static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -72,7 +72,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 //static const char *dmenucmd[] = { "dmenu_run","-c", "-l","20","-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *rofi[]  = { "rofi", "-show", "drun", "-show-icons", NULL };
+static const char *rofi[]  = { "rofi", "-show", "drun", "-theme", "~/.dwm/autostart/rofi.rasi", NULL };
 static const char *picom[]  = { "sh", "/home/memo/.dwm/autostart/picom.sh", NULL };
 static const char *dmenucmd[]  = { "sh", "/home/memo/.dwm/autostart/dmenu.sh", NULL };
 static const char *termcmd[]  = { "st","-e", NULL };
@@ -84,7 +84,9 @@ static const char *ar[]  = {"setxkbmap", "ar", NULL };
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
-static const char *music[] = { "rhythmbox",  NULL };
+static const char *play[] = { "playerctl", "play-pause",  NULL };
+static const char *next[] = { "playerctl", "next", NULL };
+static const char *previous[] = { "playerctl", "previous", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -98,7 +100,9 @@ static Key keys[] = {
 	{ MODKEY,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	{ MODKEY,                       XF86XK_AudioMute, spawn, {.v = mutevol } },
 	{ MODKEY,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
-	{ MODKEY,                       XF86XK_AudioPlay, spawn,   {.v = music } },
+	{ 0,                       XF86XK_AudioPlay, spawn,   {.v = play } },
+	{ 0,                       XF86XK_AudioNext, spawn,   {.v = next } },
+	{ 0,                       XF86XK_AudioPrev, spawn,   {.v = previous } },
 	{ MODKEY|ShiftMask,             XK_1,      spawn,          {.v = us } },
 	{ MODKEY,                       XK_u,      spawn,          {.v = ar } },
 	{ MODKEY,                       XK_a,      togglebar,      {0} },

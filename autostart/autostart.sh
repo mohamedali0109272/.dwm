@@ -4,15 +4,16 @@
 #commands
 #lxsession &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)
-feh --bg-fill ~/.dwm/wall2.jpg
+feh --bg-fill ~/.dwm/wall.jpeg
 nm-applet &
 #cd ;albert &
 slstatus &
-picom -b --config ~/.dwm/autostart/picom.sample.conf
-#picom -b --config ~/.dwm/autostart/picom.conf
+picom -b --config ~/.dwm/autostart/picom.conf
 volumeicon &
 #blueman-applet &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
+mpd &
+mpDris2 &
 
 
 

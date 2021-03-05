@@ -9,13 +9,9 @@ if test -f "/bin/pacman"; then
 	sudo pacman -S   \
 		libx11 \
 		libxft \
-		feh \
-		albert \
 		awesome-terminal-fonts \
 		dmenu \
-		network-manager-applet \
-		pkg-config \
-        	gnome-keyring
+		pkg-config 
 fi
 
 
@@ -50,6 +46,7 @@ cd stt ;sudo make clean install
 #-------
 cd ../slstatus;sudo  make clean install
 
+cd ../dmenu;sudo  make clean install
 
 #yay
 #------
@@ -68,3 +65,14 @@ cd ../slstatus;sudo  make clean install
 #		twemoji-color-font
 #
 #fi
+
+
+
+
+#paru
+#------
+if test -f "/bin/paru"; the
+	paru -S \
+	twemoji-color-font
+
+fi
